@@ -1,3 +1,13 @@
+## How to use
+
+- `git pull` from the repo.
+- `npm install` to install all the required dependencies
+
+To run the examples
+
+- Console Producer - `node examples/console_producer.js --url localhost:8082 --topic test-topic --format avro/binary`
+- Console Consumer - `node examples/console_consumer.js --url localhost:8082 --topic test-topic --format avro/binary`
+
 ## Examples
 
 A few examples are included in the `examples/` directory:
