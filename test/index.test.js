@@ -1,26 +1,24 @@
 const expect = require('expect');
 const request = require('supertest');
 
-const app = require('./../index');
+const { app } = require('./../index');
 
 describe('POST /message', () => {
-  it('Posts a new message to topic', done => {
+  it('Posts a new message to topic', function(done) {
     var topicMessage = {
       topic: 'test-topic',
-      format: 'avro',
+      format: 'binary',
       message: 'hello world'
     };
+    debugger;
     request(app)
       .post('/produce')
       .send(topicMessage)
-      .expect(200)
-      .expect(res => {
-        expect(res.body.text).toBe('Success');
-      })
-      .end((err, res) => {
-        if (err) {
-          return done(err);
-        }
+      .end(function(err, res) {
+        if (err) done(err);
+        expect(res.status).toBe(200);
+        expect(res.text).toBe('Message Sent');
+        done();
       });
   });
 });

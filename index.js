@@ -1,18 +1,3 @@
-/**
- * Copyright 2014 Confluent Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 'use strict';
 var Client = require('./lib/client');
 module.exports = Client;
@@ -20,7 +5,6 @@ module.exports = Client;
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-
 const port = 8080;
 var KafkaRest = require('.'),
   utils = require('./lib/utils');
@@ -32,7 +16,7 @@ app.post('/produce', (req, res) => {
   var kafka = new KafkaRest({ url: api_url });
   var topicName = req.body.topic,
     message = req.body.message;
-
+  debugger;
   // TODO: Add method to validate incoming message
 
   var target = kafka.topic(topicName);
@@ -47,9 +31,9 @@ app.post('/produce', (req, res) => {
   } else if (req.body.format == 'binary') {
     target.produce(message, function() {
       console.log('Message posted to Kafka');
+      res.status(200).send('Message Sent');
     });
   }
-  res.status(200).send('Success');
 });
 app.get('/', (req, res) => {
   return res.status(200).send('Hello From Kafka Service');
