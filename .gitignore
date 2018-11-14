@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+.vscode
+examples/CLPrem_Coins_Axis_v1.csv
