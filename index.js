@@ -15,23 +15,50 @@
  */
 'use strict';
 var Client = require('./lib/client');
-module.exports = Client;
+// module.exports = Client;
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
-var KafkaRest = require('.');
+
+const port = 8080;
+var KafkaRest = require('.'),
+  utils = require('./lib/utils');
 var api_url = 'http://ip-10-142-29-65.li.latam:8082';
 var kafka = new KafkaRest({ url: api_url });
 
+app.use(bodyParser.json());
+
 app.post('/produce', (req, res) => {
-  var topicName = req.body.topic;
-  if (!topicName) {
-    res.status(400).send('No topic provided in the request');
-  }
-  if (req.body.format != 'binary' && req.body.format != 'avro') {
-    res
-      .status(400)
-      .send('Format is requried, Invalid format: ' + req.body.format);
+  var topicName = req.body.topic,
+    message = req.body.message;
+
+  if (utils.validateIncomingMessage(req, res)) {
+    res.status(400).send(res);
+    return false;
   }
   var target = kafka.topic(topicName);
+  if (req.body.format == 'avro') {
+    try {
+      var avroMessage = JSON.parse(req.body.message);
+      //TODO: produce message to Kafka here
+    } catch (error) {
+      res.status(500).send('Cannot parse request message. ' + error.message);
+      return false;
+    }
+  } else if (format == 'binary') {
+    target.produce(message, function() {
+      console.log('Message posted to Kafka');
+    });
+  }
+  res.status(200).send('Success');
 });
+app.get('/', (req, res) => {
+  return res.status(200).send('Hello From Kafka Service');
+});
+
+app.listen(port, () => {
+  console.log(`Started on port ${port}`);
+});
+
+module.exports = { app };
