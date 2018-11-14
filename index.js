@@ -16,7 +16,6 @@ app.post('/produce', (req, res) => {
   var kafka = new KafkaRest({ url: api_url });
   var topicName = req.body.topic,
     message = req.body.message;
-  debugger;
   // TODO: Add method to validate incoming message
 
   var target = kafka.topic(topicName);

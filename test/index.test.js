@@ -4,13 +4,12 @@ const request = require('supertest');
 const { app } = require('./../index');
 
 describe('POST /message', () => {
-  it('Posts a new message to topic', function(done) {
+  it('Posts a new binary message to topic', done => {
     var topicMessage = {
       topic: 'test-topic',
       format: 'binary',
       message: 'hello world'
     };
-    debugger;
     request(app)
       .post('/produce')
       .send(topicMessage)
