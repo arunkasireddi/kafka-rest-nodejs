@@ -15,7 +15,7 @@
  */
 'use strict';
 var Client = require('./lib/client');
-// module.exports = Client;
+module.exports = Client;
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -24,16 +24,16 @@ const app = express();
 const port = 8080;
 var KafkaRest = require('.'),
   utils = require('./lib/utils');
-var api_url = 'http://ip-10-142-29-65.li.latam:8082';
-var kafka = new KafkaRest({ url: api_url });
+var api_url = 'http://localhost:8082'; //'http://ip-10-142-29-65.li.latam:8082';
 
 app.use(bodyParser.json());
 
 app.post('/produce', (req, res) => {
+  var kafka = new KafkaRest({ url: api_url });
   var topicName = req.body.topic,
     message = req.body.message;
 
-  if (utils.validateIncomingMessage(req, res)) {
+  if (!utils.validateIncomingMessage(req, res)) {
     res.status(400).send(res);
     return false;
   }
@@ -46,7 +46,7 @@ app.post('/produce', (req, res) => {
       res.status(500).send('Cannot parse request message. ' + error.message);
       return false;
     }
-  } else if (format == 'binary') {
+  } else if (req.body.format == 'binary') {
     target.produce(message, function() {
       console.log('Message posted to Kafka');
     });
