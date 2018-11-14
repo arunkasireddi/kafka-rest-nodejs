@@ -4,7 +4,8 @@
   "description": "NodeJS wrapper for the Kafka REST Proxy",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

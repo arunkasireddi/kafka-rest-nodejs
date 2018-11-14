@@ -33,10 +33,8 @@ app.post('/produce', (req, res) => {
   var topicName = req.body.topic,
     message = req.body.message;
 
-  if (!utils.validateIncomingMessage(req, res)) {
-    res.status(400).send(res);
-    return false;
-  }
+  // TODO: Add method to validate incoming message
+
   var target = kafka.topic(topicName);
   if (req.body.format == 'avro') {
     try {
