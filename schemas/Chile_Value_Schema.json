@@ -1,0 +1,397 @@
+{
+  "type": "record",
+  "name": "ChileIngressPremium",
+  "namespace": "com.lmig.gcw.avro_schemas.ingress.chile.premium.liberty",
+  "doc": "AVRO schema for Liberty Premium in Chile",
+  "fields": [
+    {
+      "name": "branch_office",
+      "type": "string",
+      "doc": "Branch Office",
+      "default": ""
+    },
+    {
+      "name": "branch_company",
+      "type": "int",
+      "doc": "Branch Company",
+      "default": 0
+    },
+    {
+      "name": "product_grouping",
+      "type": "int",
+      "doc": "Modality grouping of the product",
+      "default": 0
+    },
+    { "name": "coverage", "type": "int", "doc": "Coverage", "default": 0 },
+    {
+      "name": "policy_number",
+      "type": "string",
+      "doc": "Policy Number",
+      "default": ""
+    },
+    {
+      "name": "certificate_number",
+      "type": "int",
+      "doc": "Certificate Number",
+      "default": 0
+    },
+    {
+      "name": "receipt_number",
+      "type": "string",
+      "doc": "Receipt Number",
+      "default": ""
+    },
+    {
+      "name": "product_code",
+      "type": "int",
+      "doc": "Product Code",
+      "default": 0
+    },
+    {
+      "name": "insurance_number",
+      "type": "string",
+      "doc": "Insurance Number / Policy ID",
+      "default": ""
+    },
+    {
+      "name": "movement_effective_date",
+      "type": "string",
+      "doc": "Movement effective date",
+      "default": ""
+    },
+    {
+      "name": "issue_date",
+      "type": "string",
+      "doc": "Date of Issue",
+      "default": ""
+    },
+    {
+      "name": "receipt_movement_date",
+      "type": "string",
+      "doc": "Date of Receipt Movement",
+      "default": ""
+    },
+    {
+      "name": "registration_type",
+      "type": "string",
+      "doc": "Type of registration (depending on the premium)",
+      "default": ""
+    },
+    {
+      "name": "receipt_status",
+      "type": "string",
+      "doc": "Receipt Status: Pending Cancelled Charged",
+      "default": ""
+    },
+    {
+      "name": "corridor_code",
+      "type": "string",
+      "doc": "Corridor Code",
+      "default": ""
+    },
+    {
+      "name": "gross_written_premium",
+      "type": "double",
+      "doc": "gross written premium",
+      "default": 0
+    },
+    {
+      "name": "net_written_premium",
+      "type": "double",
+      "doc": "net written premium",
+      "default": 0
+    },
+    {
+      "name": "fraction_surcharge",
+      "type": "string",
+      "doc": "Surcharge for fraction",
+      "default": ""
+    },
+    {
+      "name": "consortium",
+      "type": "string",
+      "doc": "Consortium",
+      "default": ""
+    },
+    {
+      "name": "direct_tax",
+      "type": "double",
+      "doc": "direct tax",
+      "default": 0
+    },
+    { "name": "clea_tax", "type": "double", "doc": "Clea Tax", "default": 0 },
+    {
+      "name": "direct_commission",
+      "type": "double",
+      "doc": "direct commission",
+      "default": 0
+    },
+    { "name": "poirpf", "type": "string", "doc": "-", "default": "" },
+    { "name": "irpf", "type": "string", "doc": "-", "default": "" },
+    {
+      "name": "premium_rate",
+      "type": "double",
+      "doc": "Premium Rate",
+      "default": 0
+    },
+    {
+      "name": "net_accrued_premium",
+      "type": "double",
+      "doc": "Net accrued premium",
+      "default": 0
+    },
+    {
+      "name": "accrued_commission",
+      "type": "double",
+      "doc": "Accrued commission",
+      "default": 0
+    },
+    {
+      "name": "closure_month_type",
+      "type": "int",
+      "doc": "Closure of the month type (1: Definitive, 2: previous) ",
+      "default": 0
+    },
+    {
+      "name": "closure_month_description",
+      "type": "string",
+      "doc": "Description of the closure type  (1: Definitive, 2: previous) ",
+      "default": ""
+    },
+    {
+      "name": "risk_number",
+      "type": "string",
+      "doc": "Risk Number ",
+      "default": ""
+    },
+    {
+      "name": "risk_region",
+      "type": "int",
+      "doc": "Region associated with the risk",
+      "default": 0
+    },
+    {
+      "name": "policy_movement_number",
+      "type": "int",
+      "doc": "Number of Movement of the policy",
+      "default": 0
+    },
+    {
+      "name": "policy_supplement_number",
+      "type": "int",
+      "doc": "Supplement number (endorsement) of the policy",
+      "default": 0
+    },
+    {
+      "name": "policy_currency",
+      "type": "string",
+      "doc": "Policy Currency",
+      "default": ""
+    },
+    {
+      "name": "safe_currency_description",
+      "type": "string",
+      "doc": "Description safe currency",
+      "default": ""
+    },
+    {
+      "name": "branch_receipt_description",
+      "type": "string",
+      "doc": "Description branch receipt",
+      "default": ""
+    },
+    {
+      "name": "branch_company_description",
+      "type": "string",
+      "doc": "description branch company",
+      "default": ""
+    },
+    {
+      "name": "fecu_branch_code",
+      "type": "int",
+      "doc": "Branch FECU' Code",
+      "default": 0
+    },
+    {
+      "name": "fecu_branch_description",
+      "type": "string",
+      "doc": "'Branch FECU' Description",
+      "default": ""
+    },
+    {
+      "name": "policy_expiry_date",
+      "type": "string",
+      "doc": "expiry date of the policy",
+      "default": ""
+    },
+    {
+      "name": "chilean_contractor_identification_number",
+      "type": "string",
+      "doc": "Chilean number ID to the contracting ",
+      "default": ""
+    },
+    {
+      "name": "contactor_name",
+      "type": "string",
+      "doc": "Contactor Name",
+      "default": ""
+    },
+    {
+      "name": "participate_gross_premium_amount",
+      "type": "double",
+      "doc": "gross premium amount participate",
+      "default": 0
+    },
+    {
+      "name": "participate_new_premium_amount",
+      "type": "double",
+      "doc": "net premium amount participate",
+      "default": 0
+    },
+    {
+      "name": "participate_tax_amount",
+      "type": "double",
+      "doc": "tax amount participate",
+      "default": 0
+    },
+    {
+      "name": "participate_gross_commission_amount",
+      "type": "double",
+      "doc": "amount gross commission participate",
+      "default": 0
+    },
+    {
+      "name": "participate_affects_premium_amount",
+      "type": "double",
+      "doc": "premium amount affects participate",
+      "default": 0
+    },
+    {
+      "name": "participate_exempt_premium_amount",
+      "type": "double",
+      "doc": "exempt premium amount participate",
+      "default": 0
+    },
+    {
+      "name": "directly_affects_premium_amount",
+      "type": "double",
+      "doc": "premium amount directly affects",
+      "default": 0
+    },
+    {
+      "name": "direct_exempt_premium_amount",
+      "type": "double",
+      "doc": "direct exempt premium amount",
+      "default": 0
+    },
+    {
+      "name": "commission_percentage",
+      "type": "int",
+      "doc": "Commission commission percentage",
+      "default": 0
+    },
+    {
+      "name": "insured_capital_amount",
+      "type": "double",
+      "doc": "insured capital amount",
+      "default": 0
+    },
+    {
+      "name": "policy_with_facultative",
+      "type": "string",
+      "doc": "Policy with facultative",
+      "default": ""
+    },
+    {
+      "name": "coinsurance_type",
+      "type": "int",
+      "doc": "co-insurance type: Normal Leader Participant",
+      "default": 0
+    },
+    {
+      "name": "percentage_coinsurance",
+      "type": "int",
+      "doc": "percentage co-insurance",
+      "default": 0
+    },
+    {
+      "name": "new_policies_in_period_number",
+      "type": "int",
+      "doc": "Number of new Policies in the period",
+      "default": 0
+    },
+    {
+      "name": "endorsements_of_decrease_amount",
+      "type": "double",
+      "doc": "amount of endorsements of decrease",
+      "default": 0
+    },
+    {
+      "name": "increase_endorsements_amount",
+      "type": "double",
+      "doc": "amount of increase endorsements",
+      "default": 0
+    },
+    {
+      "name": "is_fleet_policy",
+      "type": "string",
+      "doc": "indicates if the policy is fleet or not",
+      "default": ""
+    },
+    {
+      "name": "fleet_description",
+      "type": "string",
+      "doc": "fleet description",
+      "default": ""
+    },
+    { "name": "cejecom", "type": "string", "doc": "", "default": "" },
+    { "name": "tejecom", "type": "string", "doc": "", "default": "" },
+    { "name": "cmotmov", "type": "string", "doc": "", "default": "" },
+    { "name": "tmotmov", "type": "string", "doc": "", "default": "" },
+    { "name": "cusudig", "type": "string", "doc": "", "default": "" },
+    { "name": "cusuaut", "type": "string", "doc": "", "default": "" },
+    { "name": "cregcont", "type": "string", "doc": "", "default": "" },
+    { "name": "csexcont", "type": "string", "doc": "", "default": "" },
+    { "name": "tasegurado", "type": "string", "doc": "", "default": "" },
+    { "name": "nnumnif_aseg", "type": "string", "doc": "", "default": "" },
+    { "name": "cregaseg", "type": "string", "doc": "", "default": "" },
+    { "name": "csexaseg", "type": "string", "doc": "", "default": "" },
+    { "name": "cactivi_riesgo", "type": "string", "doc": "", "default": "" },
+    { "name": "tactivi", "type": "string", "doc": "", "default": "" },
+    { "name": "crenova", "type": "string", "doc": "", "default": "" },
+    { "name": "ifranqu", "type": "string", "doc": "", "default": "" },
+    { "name": "cuso", "type": "string", "doc": "", "default": "" },
+    { "name": "tuso", "type": "string", "doc": "", "default": "" },
+    { "name": "ctipveh", "type": "string", "doc": "", "default": "" },
+    { "name": "ttipveh", "type": "string", "doc": "", "default": "" },
+    { "name": "cclaveh", "type": "string", "doc": "", "default": "" },
+    { "name": "tclaveh", "type": "string", "doc": "", "default": "" },
+    { "name": "cmarca", "type": "string", "doc": "", "default": "" },
+    { "name": "tmarca", "type": "string", "doc": "", "default": "" },
+    { "name": "smodelo", "type": "string", "doc": "", "default": "" },
+    { "name": "tmodelo", "type": "string", "doc": "", "default": "" },
+    { "name": "cversion", "type": "string", "doc": "", "default": "" },
+    { "name": "tversion", "type": "string", "doc": "", "default": "" },
+    { "name": "nanofab", "type": "string", "doc": "", "default": "" },
+    { "name": "cmatric", "type": "string", "doc": "", "default": "" },
+    { "name": "nmotor", "type": "string", "doc": "", "default": "" },
+    { "name": "nbastid", "type": "string", "doc": "", "default": "" },
+    { "name": "ipritec", "type": "string", "doc": "", "default": "" },
+    { "name": "iprianu", "type": "string", "doc": "", "default": "" },
+    { "name": "cvalidado", "type": "string", "doc": "", "default": "" },
+    { "name": "cprovin", "type": "string", "doc": "", "default": "" },
+    { "name": "cpostal", "type": "string", "doc": "", "default": "" },
+    { "name": "cpoblac", "type": "string", "doc": "", "default": "" },
+    { "name": "cpais", "type": "string", "doc": "", "default": "" },
+    { "name": "csiglas", "type": "string", "doc": "", "default": "" },
+    { "name": "tnomvia", "type": "string", "doc": "", "default": "" },
+    { "name": "nnumvia", "type": "string", "doc": "", "default": "" },
+    { "name": "tcomple", "type": "string", "doc": "", "default": "" },
+    { "name": "cciudad", "type": "string", "doc": "", "default": "" },
+    { "name": "cvalido", "type": "string", "doc": "", "default": "" },
+    { "name": "tnatrie", "type": "string", "doc": "", "default": "" },
+    { "name": "ttitulo", "type": "string", "doc": "", "default": "" },
+    { "name": "cagrseg", "type": "string", "doc": "", "default": "" },
+    { "name": "tagrseg", "type": "string", "doc": "", "default": "" }
+  ]
+}

@@ -9,6 +9,7 @@ const port = 8080;
 var KafkaRest = require('.'),
   utils = require('./lib/utils');
 var api_url = 'http://localhost:8082'; //'http://ip-10-142-29-65.li.latam:8082';
+var schema = require('./schemas/Starter_Schema.json');
 
 app.use(bodyParser.json());
 
@@ -21,8 +22,10 @@ app.post('/produce', (req, res) => {
   var target = kafka.topic(topicName);
   if (req.body.format == 'avro') {
     try {
-      var avroMessage = JSON.parse(req.body.message);
+      var infoValueSchema = new KafkaRest.AvroSchema(schema);
+      var avroMessage = JSON.stringify(req.body.message);
       //TODO: produce message to Kafka here
+      target.produce(infoValueSchema, avroMessage, handleProduceResponse);
     } catch (error) {
       res.status(500).send('Cannot parse request message. ' + error.message);
       return false;
@@ -42,4 +45,12 @@ app.listen(port, () => {
   console.log(`Started on port ${port}`);
 });
 
+function handleProduceResponse(err) {
+  if (err) {
+    console.log('Error producing message: ' + err);
+    return 'Error producing message: ' + err;
+  } else {
+    return 'AVRO Message sent to topic';
+  }
+}
 module.exports = { app };
